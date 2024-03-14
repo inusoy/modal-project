@@ -1,6 +1,6 @@
 <template>
-  <h1>{{  title }}</h1>
-  <Modal header="Sign up for the Giveaway"/>
+  <h1>{{ title }}</h1>
+  <Modal :header="header" :text="text" />
 </template>
 
 
@@ -15,7 +15,9 @@ export default {
   },
   data() {
     return {
-      title: 'My First Vue App'
+      title: 'My First Vue App',
+      header: 'Sign up for the Giveaway',
+      text: 'Grab your ninja swag for half price!'
     }
   }
 }
@@ -30,6 +32,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 h1 {
   border-bottom: 1px solid darkgray;
   display: inline-block;
