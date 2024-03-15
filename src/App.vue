@@ -11,7 +11,17 @@
       <p>Grab your ninja swag for half price!</p>
     </Modal>
   </div>
+  <div v-if="showModalDark">
+    <Modal theme="dark" @close="toggleModal2">
+      <template v-slot:logo>
+        <img src="./assets/logo.png" alt="logo">
+      </template>
+      <h1>Our logo!</h1>
+      <br>
+    </Modal>
+  </div>
   <button @click.alt="toggleModal">open modal (alt)</button>
+  <button @click="toggleModal2">open dark modal</button>
 </template>
 
 
@@ -27,12 +37,16 @@ export default {
   data() {
     return {
       title: 'My First Vue App',
-      showModal: false
+      showModal: false,
+      showModalDark: false
     }
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal
+    },
+    toggleModal2() {
+      this.showModalDark = !this.showModalDark
     }
   }
 }

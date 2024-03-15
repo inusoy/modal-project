@@ -3,6 +3,7 @@
         <div class="modal"
             :class="{ sale: theme === 'sale', dark: theme === 'dark', other: theme !== ('sale' || 'dark') }">
             <slot>default content (shows up if we don't pass anything)</slot>
+            <slot name="logo"></slot>
             <div class="actions">
                 <slot name="links"></slot>
             </div>
